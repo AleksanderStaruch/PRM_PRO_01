@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PRM_PRO_01</string>
+    <string name="add_new_debtor">Add new debtor</string>
+    <string name="debtor_list">Debtor list</string>
+    <string name="simulate">Simulate</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+    <string name="debt">Debt</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="amount">amount</string>
+    <string name="s">$/s</string>
+    <string name="start">Start</string>
+    <string name="interest">Interest</string>
+    <string name="_0">0%</string>
+    <string name="name_hint">name</string>
+    <string name="choose_your_interest">Choose your interest</string>
+    <string name="ok">Ok</string>
+    <string name="decrease_interest">decrease interest</string>
+    <string name="increase_interest">increase interest</string>
+    <string name="my_walet">My walet</string>
+    <string name="debtor_walet">debtor walet</string>
+    <string name="textview">TextView</string>
+</resources>
