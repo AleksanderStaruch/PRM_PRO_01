@@ -1,14 +1,19 @@
 package com.example.prm_pro_01
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import java.io.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val fileName:String = "data.csv"
+
     companion object{
-        private var debtorList = mutableListOf<Debtor>()
+        var debtorList = mutableListOf<Debtor>()
 
         fun addDebtor(name:String, debt:Double){
             debtorList.add(Debtor(name, debt))
@@ -19,6 +24,40 @@ class MainActivity : AppCompatActivity() {
             debtorList[position].debt = debt
         }
     }
+
+//    private fun saveData(){
+//        val fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE)
+//        try {
+//            for(debtor in debtorList){
+//                val data: String = debtor.name+","+debtor.debt.toString()
+//                fileOutputStream.write(data.toByteArray())
+//                fileOutputStream.flush()
+//            }
+//        }catch (e: IOException){
+//            e.printStackTrace()
+//        }finally {
+//            fileOutputStream.close()
+//        }
+//    }
+//
+//    private fun loadData(){
+//        var fileInputStream: FileInputStream = openFileInput(fileName)
+//        try {
+//            fileInputStream
+//            val bufferedReader = BufferedReader(InputStreamReader(fileInputStream))
+//            debtorList.clear()
+//            bufferedReader.forEachLine {
+//                val tmp = it.split(",")
+//                val name = tmp[0]
+//                val debt = tmp[1].toDouble()
+//                debtorList.add(Debtor(name,debt))
+//            }
+//        }catch (e: IOException){
+//            e.printStackTrace()
+//        }finally {
+//            fileInputStream.close()
+//        }
+//    }
 
     private fun sumOfAllDebts(list:List<Debtor>): Double {
         var sum=0.0
@@ -41,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        addDebtor("Olek",125.0)
+        loadData()
 
         val addbuttpn = findViewById<Button>(R.id.w1_add_button)
         val listview = findViewById<ListView>(R.id.w1_listView)

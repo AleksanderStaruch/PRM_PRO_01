@@ -111,7 +111,7 @@
             android:ems="10"
             android:hint="@string/amount"
             android:importantForAutofill="no"
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/w3_textView2" />
@@ -132,7 +132,17 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/debtorWaletIamge"
+        android:id="@+id/w3_dollar_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/dolar"
+        app:layout_constraintBottom_toBottomOf="@+id/w3_debtor_wallet_iamge"
+        app:layout_constraintStart_toStartOf="@+id/w3_debtor_wallet_iamge"
+        app:srcCompat="@drawable/dolar"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/w3_debtor_wallet_iamge"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -143,7 +153,7 @@
         app:srcCompat="@drawable/debtor_walet1" />
 
     <ImageView
-        android:id="@+id/myWaletIamge"
+        android:id="@+id/w3_my_wallet_iamge"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"
@@ -154,30 +164,26 @@
         app:srcCompat="@drawable/my_walet1" />
 
     <TextView
-        android:id="@+id/w3_debtor_walet_text"
+        android:id="@+id/w3_debtor_wallet_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/textview"
-        app:layout_constraintEnd_toEndOf="@+id/debtorWaletIamge"
-        app:layout_constraintStart_toStartOf="@+id/debtorWaletIamge"
-        app:layout_constraintTop_toBottomOf="@+id/debtorWaletIamge" />
+        app:layout_constraintEnd_toEndOf="@+id/w3_debtor_wallet_iamge"
+        app:layout_constraintStart_toStartOf="@+id/w3_debtor_wallet_iamge"
+        app:layout_constraintTop_toBottomOf="@+id/w3_debtor_wallet_iamge" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/my_walet"
-        app:layout_constraintEnd_toEndOf="@+id/myWaletIamge"
-        app:layout_constraintStart_toStartOf="@+id/myWaletIamge"
-        app:layout_constraintTop_toBottomOf="@+id/myWaletIamge" />
+        app:layout_constraintEnd_toEndOf="@+id/w3_my_wallet_iamge"
+        app:layout_constraintStart_toStartOf="@+id/w3_my_wallet_iamge"
+        app:layout_constraintTop_toBottomOf="@+id/w3_my_wallet_iamge" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/dolar"
-        tools:layout_editor_absoluteX="315dp"
-        tools:layout_editor_absoluteY="474dp" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
